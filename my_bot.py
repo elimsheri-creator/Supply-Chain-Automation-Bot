@@ -9,7 +9,7 @@ client = gspread.authorize(creds)
 sheet = client.open("Warehouse_Inventory").sheet1
 
 # 2. Настройка Бота
-bot = telebot.TeleBot('8027300175:AAFLU7nFPZMjFlCTjW9EEpUFmnvXI1o_qhs')
+bot = telebot.TeleBot('токен')
 
 # Команда для проверки остатков
 @bot.message_handler(commands=['stock'])
@@ -38,4 +38,5 @@ def check_logic(message):
         bot.reply_to(message, "Напиши размеры через пробел (напр. 40 150) или жми /stock")
 
 print("Бот вышел на смену! Проверяй в Telegram.")
+
 bot.infinity_polling()
